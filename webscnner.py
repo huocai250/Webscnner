@@ -1,6 +1,6 @@
 """
 by huocai
-qq 1332334007
+github https://www.github.com/huocai250
 """
 import urllib
 import sys
@@ -103,7 +103,7 @@ def scnnerwebfile(url):
 
 def main():
     # 使用提示
-    usage = 'sudo python3 webscnner.py [-u url]\nby huocai 此项目不开源！！！\n作者QQ:1332334007'
+    usage = 'sudo python3 webscnner.py [-u url]\nby huocai\ngithub https://www.github.com/huocai250'
     parser = OptionParser(usage)
 
     parser.add_option('-u', dest='url', type='string', help='链接')
