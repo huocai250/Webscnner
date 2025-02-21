@@ -1,4 +1,4 @@
-# WebScanner
+# WebScnner
 
 一个功能强大的Web安全扫描工具，用于信息收集、漏洞检测和敏感数据发现。
 
@@ -6,7 +6,7 @@
 
 ## 简介
 
-`webscanner.py` 是一个基于 Python 的异步Web扫描器，最初由 huocai 开发（GitHub: [huocai250](https://www.github.com/huocai250)），并由 Grok 3 增强至最终版。它集成了多种功能，包括基本信息收集、漏洞扫描、敏感信息检测和目录枚举，适用于安全研究、渗透测试和网站安全评估。
+`webscnner.py` 是一个基于 Python 的异步Web扫描器，最初由 huocai 开发（GitHub: [huocai250](https://www.github.com/huocai250)），并由 Grok 3 增强至最终版。它集成了多种功能，包括基本信息收集、漏洞扫描、敏感信息检测和目录枚举，适用于安全研究、渗透测试和网站安全评估。
 
 ---
 
@@ -15,7 +15,7 @@
 运行脚本需要通过命令行参数指定目标URL和其他可选配置。基本格式如下：
 
 ```bash
-python3 webscanner.py [-u url] [-t threads] [-w wordlist] [-o output] [-v] [-p proxy] [-r rate] [-s] [--no-robots] [--retries retries] [--custom-wordlist file]
+python3 webscnner.py [-u url] [-t threads] [-w wordlist] [-o output] [-v] [-p proxy] [-r rate] [-s] [--no-robots] [--retries retries] [--custom-wordlist file]
 ```
 
 ---
@@ -131,7 +131,7 @@ pyjwt: 解码JWT令牌。
 扫描目标并输出到控制台：
 
 ```bash
-python3 webscanner.py -u https://example.com
+python3 webscnner.py -u https://example.com
 ```
 
 ## 详细输出并保存结果
@@ -139,14 +139,14 @@ python3 webscanner.py -u https://example.com
 启用详细模式并保存到JSON文件：
 
 ```bash
-python3 webscanner.py -u https://example.com -v -o results.json
+python3 webscnner.py -u https://example.com -v -o results.json
 ```
 ## 使用代理和隐秘模式
 
 通过SOCKS5代理扫描，启用隐秘模式：
 
 ```bash
-python3 webscanner.py -u https://example.com -p socks5://127.0.0.1:9050 -s -v
+python3 webscnner.py -u https://example.com -p socks5://127.0.0.1:9050 -s -v
 ```
 
 ## 自定义字典和线程
@@ -154,7 +154,7 @@ python3 webscanner.py -u https://example.com -p socks5://127.0.0.1:9050 -s -v
 指定目录字典、子域名字典和线程数，调整请求速率：
 
 ```bash
-python3 webscanner.py -u https://example.com -t 20 -w dir.txt --custom-wordlist subdomains.txt -r 50 -v -o scan_results.json
+python3 webscnner.py -u https://example.com -t 20 -w dir.txt --custom-wordlist subdomains.txt -r 50 -v -o scan_results.json
 ```
 
 ## 高级配置
@@ -162,12 +162,12 @@ python3 webscanner.py -u https://example.com -t 20 -w dir.txt --custom-wordlist 
 忽略robots.txt，设置重试次数，使用代理：
 
 ```bash
-python3 webscanner.py -u https://example.com -t 15 -w custom_dirs.txt -p http://proxy.example.com:8080 -r 75 -s --no-robots --retries 5 -v -o detailed_results.json
+python3 webscnner.py -u https://example.com -t 15 -w custom_dirs.txt -p http://proxy.example.com:8080 -r 75 -s --no-robots --retries 5 -v -o detailed_results.json
 ```
 
 ## 输出示例
 
-以下是运行 `python3 webscanner.py -u https://example.com -v -o results.json` 的部分输出：
+以下是运行 `python3 webscnner.py -u https://example.com -v -o results.json` 的部分输出：
 
 ```plaintext
 2025-02-21 10:00:00,123 - INFO - --------------------[*] URL基本检测加载中...--------------------
