@@ -15,7 +15,8 @@
 运行脚本需要通过命令行参数指定目标URL和其他可选配置。基本格式如下：
 
 ```bash
-python3 webscanner.py [-u url] [-t threads] [-w wordlist] [-o output] [-v] [-p proxy] [-r rate] [-s] [--no-robots] [--retries retries] [--custom-wordlist file]```
+python3 webscanner.py [-u url] [-t threads] [-w wordlist] [-o output] [-v] [-p proxy] [-r rate] [-s] [--no-robots] [--retries retries] [--custom-wordlist file]
+```
 
 ---
 
@@ -24,14 +25,15 @@ python3 webscanner.py [-u url] [-t threads] [-w wordlist] [-o output] [-v] [-p p
 运行脚本需要安装以下Python库。可以通过以下命令一次性安装：
 
 ```bash
-pip install requests beautifulsoup4 tqdm aiohttp aiohttp_socks dnspython python-whois aiofiles aiohttp-retry pyjwt```
+pip install requests beautifulsoup4 tqdm aiohttp aiohttp_socks dnspython python-whois aiofiles aiohttp-retry pyjwt
+```
 
 ---
 
 ## 依赖说明
 
-requests: 用于同步HTTP请求。
-beautifulsoup4: 解析HTML内容。
+'requests': 用于同步HTTP请求。
+'beautifulsoup4': 解析HTML内容。
 tqdm: 显示扫描进度条。
 aiohttp: 异步HTTP请求核心库。
 aiohttp_socks: 支持SOCKS代理。
