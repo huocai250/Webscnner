@@ -189,4 +189,4 @@ python3 webscanner.py -u https://example.com -t 15 -w custom_dirs.txt -p http://
 2025-02-21 10:00:02,139 - INFO - 结果已保存到 results.json
 ```
 
-生成的 results.json 文件将包含所有扫描数据，格式详见代码中的完整示例。
+生成的 results.json 文件将包含所有扫描数据
