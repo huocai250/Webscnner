@@ -49,8 +49,6 @@ pyjwt: 解码JWT令牌。
 
 # 功能列表
 
----
-
 ## 基本信息收集
 
 1.URL解析: 提取主机名、协议、IP、端口。
@@ -105,7 +103,7 @@ pyjwt: 解码JWT令牌。
 
 ---
 
-##目录扫描
+## 目录扫描
 
 22.目录和文件枚举: 使用字典发现隐藏资源。
 
@@ -123,3 +121,72 @@ pyjwt: 解码JWT令牌。
 ## 输出
 
 27.结果保存: JSON格式，包含详细扫描数据。
+
+---
+
+# 使用例子
+
+## 基本用法
+
+扫描目标并输出到控制台：
+
+```bash
+python3 webscanner.py -u https://example.com
+```
+
+## 详细输出并保存结果
+
+启用详细模式并保存到JSON文件：
+
+```bash
+python3 webscanner.py -u https://example.com -v -o results.json
+```
+## 使用代理和隐秘模式
+
+通过SOCKS5代理扫描，启用隐秘模式：
+
+```bash
+python3 webscanner.py -u https://example.com -p socks5://127.0.0.1:9050 -s -v
+```
+
+## 自定义字典和线程
+
+指定目录字典、子域名字典和线程数，调整请求速率：
+
+```bash
+python3 webscanner.py -u https://example.com -t 20 -w dir.txt --custom-wordlist subdomains.txt -r 50 -v -o scan_results.json
+```
+
+## 高级配置
+
+忽略robots.txt，设置重试次数，使用代理：
+
+```bash
+python3 webscanner.py -u https://example.com -t 15 -w custom_dirs.txt -p http://proxy.example.com:8080 -r 75 -s --no-robots --retries 5 -v -o detailed_results.json
+```
+
+## 输出示例
+
+以下是运行 `python3 webscanner.py -u https://example.com -v -o results.json` 的部分输出：
+
+```plaintext
+2025-02-21 10:00:00,123 - INFO - --------------------[*] URL基本检测加载中...--------------------
+2025-02-21 10:00:00,124 - INFO - [+] 域名: example.com
+2025-02-21 10:00:00,125 - INFO - [+] 协议: https
+2025-02-21 10:00:00,126 - INFO - [+] IP地址: 93.184.216.34
+2025-02-21 10:00:00,127 - INFO - [+] 默认端口: 443
+2025-02-21 10:00:00,128 - INFO - [+] 开放端口: 80 (http), 443 (https)
+2025-02-21 10:00:00,129 - INFO - [+] HTTP头信息:
+2025-02-21 10:00:00,130 - INFO -     Server: nginx
+2025-02-21 10:00:00,131 - WARNING - [!] 缺少安全头: Content-Security-Policy
+2025-02-21 10:00:00,132 - INFO - [+] Cookies:
+2025-02-21 10:00:00,133 - INFO -     session_id: abc123 (Secure: True)
+2025-02-21 10:00:00,134 - INFO - [+] 发现子域名: www.example.com, mail.example.com
+2025-02-21 10:00:00,135 - INFO - --------------------[*] XSS检测加载中...--------------------
+2025-02-21 10:00:00,136 - INFO - [+] 在 https://example.com 上检测到 2 个表单
+2025-02-21 10:00:00,137 - INFO - [+] 检测到敏感信息 (email): test@example.com
+2025-02-21 10:00:02,138 - INFO - 扫描完成，用时: 2.21 秒
+2025-02-21 10:00:02,139 - INFO - 结果已保存到 results.json
+```
+
+生成的 results.json 文件将包含所有扫描数据，格式详见代码中的完整示例。
