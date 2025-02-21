@@ -32,8 +32,9 @@ pip install requests beautifulsoup4 tqdm aiohttp aiohttp_socks dnspython python-
 
 ## 依赖说明
 
-'requests': 用于同步HTTP请求。
-'beautifulsoup4': 解析HTML内容。
+```text
+requests: 用于同步HTTP请求。
+beautifulsoup4: 解析HTML内容。
 tqdm: 显示扫描进度条。
 aiohttp: 异步HTTP请求核心库。
 aiohttp_socks: 支持SOCKS代理。
@@ -42,3 +43,4 @@ python-whois: WHOIS信息获取。
 aiofiles: 异步文件操作。
 aiohttp-retry: 提供请求重试功能。
 pyjwt: 解码JWT令牌。
+```
